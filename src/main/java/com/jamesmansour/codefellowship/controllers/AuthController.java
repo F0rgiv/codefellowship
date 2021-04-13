@@ -29,6 +29,7 @@ public class AuthController {
         user.setPassword(passwordEncoder.encode(password));
         user.setUsername(username);
         applicationUserRepository.save(user);
+        System.out.println("yo");
         return new RedirectView("/");
     }
 
