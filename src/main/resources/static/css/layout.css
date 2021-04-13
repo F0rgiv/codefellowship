@@ -3,7 +3,6 @@ body {
     min-width: 500px;
     max-width: 2000px;
     display: grid;
-    justify-content: center;
 }
 
 form {
@@ -18,14 +17,12 @@ header {
     padding: 10px;
     display: grid;
     grid-template-columns: 100px auto 100px;
-    justify-content: center;
-    align-items: center;
 }
-
 
 header > * {
     padding: 15px;
     color: whitesmoke;
+    justify-self: center
 }
 
 form {
