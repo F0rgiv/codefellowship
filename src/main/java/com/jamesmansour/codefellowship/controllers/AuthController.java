@@ -18,7 +18,12 @@ public class AuthController {
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
-    @PostMapping("Signup")
+    @GetMapping("/signup")
+    public String showSingUp(){
+        return "signup.html";
+    }
+
+    @PostMapping("/signup")
     public RedirectView createUser(String username, String password){
         ApplicationUser user = new ApplicationUser();
         user.setPassword(passwordEncoder.encode(password));
