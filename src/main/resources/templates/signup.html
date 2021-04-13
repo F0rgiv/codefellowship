@@ -10,10 +10,18 @@
 <header th:replace="fragments/header.html :: header"> </header>
 <h1>Signup</h1>
 <form action="/signup" method="POST">
+
     <label for="username"> username </label>
     <input type="text" name="username">
     <label for="password">password</label>
     <input type="password" name="password">
+    <label for="firstName">First Name</label>
+    <input type="firstName" name="firstName">
+    <label for="lastName">LastName</label>
+    <input type="lastName" name="lastName">
+    <label for="dateOfBirth">Date Of Birth</label>
+    <input type="dateOfBirth" name="dateOfBirth">
+
     <input type="submit" value="Sign up">
 </form>
 </body>
