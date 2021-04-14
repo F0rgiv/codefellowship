@@ -59,9 +59,7 @@ public class ApplicationUserController {
         m.addAttribute("user", user.getUsername());
         List<Post> posts = new LinkedList<>();
         for (ApplicationUser person : user.getFollowing()) {
-            for (Post post : person.getPosts()) {
-                posts.add(post);
-            }
+            posts.addAll(person.getPosts());
         }
         m.addAttribute("posts", posts);
         return "feed";
