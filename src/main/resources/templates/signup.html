@@ -8,12 +8,13 @@
 </head>
 <body>
 <header th:replace="fragments/header.html :: header"> </header>
+<div>
 <h1>Signup</h1>
 <form action="/signup" method="POST">
 
-    <label for="username"> username </label>
+    <label for="username"> Username </label>
     <input type="text" name="username">
-    <label for="password">password</label>
+    <label for="password">Password</label>
     <input type="password" name="password">
     <label for="firstName">First Name</label>
     <input type="firstName" name="firstName">
@@ -24,5 +25,6 @@
 
     <input type="submit" value="Sign up">
 </form>
+</div>
 </body>
 </html>

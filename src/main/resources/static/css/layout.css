@@ -5,12 +5,6 @@ body {
     display: grid;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 header {
     background-color: #181818;
     min-height: 30px;
@@ -26,7 +20,18 @@ header > * {
 }
 
 form {
-    padding: 10px
+    max-width: 500px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+form > * {
+    margin: 2px;
+}
+
+form > label {
+    margin-top: 15px;
 }
 
 ul {
