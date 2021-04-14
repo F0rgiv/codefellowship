@@ -29,16 +29,33 @@ form {
     padding: 10px
 }
 
+ul {
+ display: grid;
+     justify-self: center;
+     justify-items: center;
+}
+
+
 li {
     background-color: whitesmoke;
     margin-top: 10px;
     padding: 5px;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    width: 400px;
+    text-align-items: center;
 }
 
 div {
-display: grid;
-justify-content: center;
+    width: 400px;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+h1 {
+    margin: 10px;
+    font-size: larger;
+    font-weight: bold;
 }
