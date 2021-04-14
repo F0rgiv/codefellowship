@@ -38,10 +38,8 @@ public class ApplicationUserController {
     public RedirectView followDetail(Model m, HttpServletRequest request, Long toFollowId) {
         ApplicationUser user = applicationUserRepository.findByUsername(request.getUserPrincipal().getName());
         ApplicationUser subject = applicationUserRepository.findById(toFollowId).get();
-        System.out.println(subject.getFollowing());
-        user.getFollowing().add(subject);
-        System.out.println(subject.getFollowing());
-        applicationUserRepository.save(user);
+        subject.getFollowers().add(user);
+        applicationUserRepository.save(subject);
         return new RedirectView("/users/" + toFollowId);
     }
 
