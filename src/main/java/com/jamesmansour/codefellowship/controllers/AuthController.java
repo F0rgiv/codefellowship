@@ -49,7 +49,7 @@ public class AuthController {
 
 //      ================ User Signed in =============
 
-        return new RedirectView("/");
+        return new RedirectView("/myProfile");
     }
 
     @GetMapping("/login")

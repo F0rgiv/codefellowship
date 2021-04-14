@@ -16,7 +16,7 @@ header {
     min-height: 30px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 100px auto 100px;
+    grid-template-columns: 150px auto 150px;
 }
 
 header > * {
@@ -36,4 +36,9 @@ li {
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+div {
+display: grid;
+justify-content: center;
 }

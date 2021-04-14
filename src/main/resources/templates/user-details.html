@@ -7,6 +7,29 @@
     <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
+<header th:replace="fragments/header.html :: header"> </header>
 
+<div>
+    <h1 th:text="${subject.username}"></h1>
+    <h2 th:text="${subject.firstName}"></h2>
+    <h2 th:text="${subject.lastName}"></h2>
+    <h3 th:text="${subject.dateOfBirth}"></h3>
+    <p th:text="${subject.bio}"></p>
+</div>
+
+<form th:if="${user} == ${subject.username}" action="/addPost" method="POST">
+    <label for="body">Post </label>
+    <input type="text" name="body">
+
+    <input id="application_user_id" name="application_user_id" type="hidden" th:value="${subject.id}">
+    <input type="submit" value="Add Post">
+</form>
+
+<ul>
+    <li th:each="post : ${subject.posts}">
+        <h3 th:text="${post.createdAt}"></h3>
+        <p th:text="${post.body}"></p>
+    </li>
+</ul>
 </body>
 </html>

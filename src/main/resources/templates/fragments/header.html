@@ -8,7 +8,9 @@
 <header th:fragment="header">
     <a href="/">Home</a>
     <h1>Code Friends</h1>
-    <a href="/signup">Signup</a>
+    <h3 th:if="${user}" th:text="${user} + ' | '"></h3>
+<!--    include <a href="/login">log in</a>-->
+    <h3 th:unless="${user}" ><a href="/signup">Signup</a> | <a href="/login">log in</a></h3>
 </header>
 </body>
 </html>
