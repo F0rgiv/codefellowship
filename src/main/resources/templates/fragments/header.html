@@ -6,7 +6,7 @@
 </head>
 <body>
 <header th:fragment="header">
-    <a href="/">Home</a>
+    <h3><a href="/">Home</a> | <a href="/feed">feed</a></h3>
     <h1>Code Friends</h1>
     <h3 th:if="${user}"><a href="/myProfile" th:text="${user}"></a> | <a href="/logout">log out</a></h3>
     <h3 th:unless="${user}" ><a href="/signup">Signup</a> | <a href="/login">log in</a></h3>
