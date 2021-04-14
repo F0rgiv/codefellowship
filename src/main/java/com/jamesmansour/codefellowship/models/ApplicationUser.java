@@ -3,23 +3,26 @@ package com.jamesmansour.codefellowship.models;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ApplicationUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+
+    @Column(unique = true)
     String username;
     String password;
     String firstName;
     String lastName;
     String dateOfBirth;
     String bio;
+
+    @OneToMany(mappedBy = "applicationUser", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Post> posts;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -61,6 +64,10 @@ public class ApplicationUser implements UserDetails {
         return lastName;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -81,6 +88,10 @@ public class ApplicationUser implements UserDetails {
         this.bio = bio;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
     @Override
     public boolean isAccountNonLocked() {
         return true;
@@ -94,5 +105,19 @@ public class ApplicationUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "ApplicationUser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", bio='" + bio + '\'' +
+                ", posts=" + posts +
+                '}';
     }
 }

@@ -8,13 +8,15 @@
 </head>
 <body>
 <header th:replace="fragments/header.html :: header"> </header>
+<div>
 <h1>Login</h1>
 <form action="/login" method="POST">
-    <label for="username"> username </label>
+    <label for="username"> Username </label>
     <input type="text" name="username">
-    <label for="password">password</label>
+    <label for="password">Password</label>
     <input type="password" name="password">
     <input type="submit" value="Sign in">
 </form>
+    </div>
 </body>
 </html>

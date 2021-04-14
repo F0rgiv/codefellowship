@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Code Friends</title>
+    <title>Users</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/layout.css">
 </head>
 <body>
 <header th:replace="fragments/header.html :: header"></header>
-<div>
-    <h1>Welcome to Code Friends!</h1>
-    <P>Here you can sing up make posts and see other as well!</P>
-    <br>
-    <a href="/login">log in</a>
-    <a href="/users">View all other users.</a>
-</div>
+
+<ul>
+    <li th:each="user : ${users}">
+        <h3 th:text="${user.username}"></h3>
+        <a th:href="'/users/' + ${user.id}">see their posts</a>
+    </li>
+</ul>
 </body>
 </html>

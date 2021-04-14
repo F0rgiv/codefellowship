@@ -3,13 +3,6 @@ body {
     min-width: 500px;
     max-width: 2000px;
     display: grid;
-    justify-content: center;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 header {
@@ -17,20 +10,36 @@ header {
     min-height: 30px;
     padding: 10px;
     display: grid;
-    grid-template-columns: 100px auto 100px;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 150px auto 150px;
 }
-
 
 header > * {
     padding: 15px;
     color: whitesmoke;
+    justify-self: center
 }
 
 form {
-    padding: 10px
+    max-width: 500px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
 }
+
+form > * {
+    margin: 2px;
+}
+
+form > label {
+    margin-top: 15px;
+}
+
+ul {
+ display: grid;
+     justify-self: center;
+     justify-items: center;
+}
+
 
 li {
     background-color: whitesmoke;
@@ -38,5 +47,20 @@ li {
     padding: 5px;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    width: 400px;
+    text-align-items: center;
+}
+
+div {
+    width: 400px;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+h1 {
+    margin: 10px;
+    font-size: larger;
+    font-weight: bold;
 }
