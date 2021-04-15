@@ -25,6 +25,11 @@
     <input type="submit" value="Add Post">
 </form>
 
+<form th:if="${user} != ${subject.username}" action="/follow" method="POST">
+    <input id="toFollowId" name="toFollowId" type="hidden" th:value="${subject.id}">
+    <input type="submit" value="Follow">
+</form>
+
 <ul>
     <li th:each="post : ${subject.posts}">
         <h3 th:text="${post.createdAt}"></h3>
