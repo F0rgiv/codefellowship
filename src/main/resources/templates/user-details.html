@@ -17,6 +17,7 @@
     <p th:text="${subject.bio}"></p>
 </div>
 
+<div>
 <form th:if="${user} == ${subject.username}" action="/addPost" method="POST">
     <label for="body">Post </label>
     <input type="text" name="body">
@@ -24,11 +25,14 @@
     <input id="application_user_id" name="application_user_id" type="hidden" th:value="${subject.id}">
     <input type="submit" value="Add Post">
 </form>
+</div>
 
+<div>
 <form th:if="${user} != ${subject.username}" action="/follow" method="POST">
     <input id="toFollowId" name="toFollowId" type="hidden" th:value="${subject.id}">
     <input type="submit" value="Follow">
 </form>
+</div>
 
 <ul>
     <li th:each="post : ${subject.posts}">
